@@ -1,0 +1,58 @@
+Logical Volume Management (LVM) on UBUNTU
+change to root or use sudo before
+
+Install lvm2 using 
+$sudo apt-get install lvm2
+
+Physical storage devices for LVM
+pvcreate, pvscan, pvdisplay commands
+By using the following commands we can use
+
+we can create two volumes sda6 sda7
+$ sudo pvcreate /dev/sda6 /dev/sda7
+
+Two volumes will be created as
+Physical volume "/dev/sda6" successfully created                                                 
+Physical volume "/dev/sda7" successfully created 
+
+We can view the physical volumes already created
+$ sudo pvscan
+
+To view the physical volumes with attributes like size, physical extent, total physical extent, free size, etc.
+$ sudo pvdisplay
+
+Create the volume groups
+using commands vgcreate, vgdisplay
+
+Eg: two volumes created sda6 and sda7 are combined as a volume group
+
+we can be able to create a volume group using
+$ sudo vgcreate vol_grp1 /dev/sda6 /dev/sda7
+output: Volume  group "vol_grp1" successfully created
+
+The following command displays lists of created volume groups
+$ sudo vgdisplay
+
+we can create logical volumes using the following
+lvcreate, lvdisplay.
+
+lvcreate will create a logical volume with a size of 80mb
+$ sudo lvcreate -l 20 -n logical_vol1 vol_grp1 
+Output: Logical volume "logical_vol1" created
+
+use this lvdisplay command to view all the available logical volumes
+$ sudo lvdisplay
+
+we can use the created logical volumes
+$ sudo  mkfs.ext3 /dev/vol_grp1/logical_vol1
+
+LVM resize : to change the logical volume size or extend the volume size
+$ sudo lvextend -L100 /dev/vol_grp1/logical_vol1
+
+Output:1.Extending logical volume logical_vol1 to 100.00 MB 	 
+       2.Logical volume logical_vol1 successfully resized
+
+TO add additional size 
+$ sudo lvextend -L+100 /dev/vol_grp1/logical_vol1 
+Output: 1. Extending logical volume logical_vol1 to 200.00 MB 
+        2. Logical volume logical_vol1 successfully resized
