@@ -1,5 +1,0 @@
-Git to connect remote
-changing from HTTPS to SSH and SSh to HTTPS
-
-https://help.github.com/articles/changing-a-remote-s-url/
-The git remote set-url command changes an existing remote repository URL.

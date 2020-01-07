@@ -1,5 +1,0 @@
-GIT : It is the version control tool. It is primarily used for source code management in software development, but it can be used to keep track of changes in any set of files.
-there are two types of repositories:
-1.bare repo 2.non-bare repo
-1.bare repo: In this type the workspace and the repository is in our workspace itself.
-2.non-bare repo: In this type the workspace in our system and repo is the github/central repo.

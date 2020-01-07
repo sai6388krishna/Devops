@@ -1,5 +1,0 @@
-To setup root password on Ubuntu
-step1: Sudo passwd root
-step2: Enter password
-step3: Reenter password
-step4: su to change from user to root
