@@ -1,0 +1,50 @@
+ wget -qO- https://get.docker.com/ | sh
+   
+ 3  mkdir docker 
+   
+ 4  cd docker/
+   
+ 5  ls
+   
+ 6  sudo vi dockerfile
+   
+ 9  docker build -t tomcat:latest .
+  
+ 10  docker images
+  
+ 11  docker run -d -p 8080:8080 --name demo tomcat:latest
+   
+ 12  docker ps
+   
+ 13  docker ps -a
+  
+ 14  cd ../
+  
+ 15  ls
+  
+ 16  cp petclinic.war sample.war docker/
+  
+ 17  ls
+  
+ 18  cp TechdatCommunicationss.war docker/
+ 
+ 19  cd docker/
+  
+ 20  ls
+  
+ 21  docker ps
+  
+ 22  docker cp petclinic.war sample.war TechdatCommunicationss.war a6fec907dcb7:/usr/local/tomcat/webapps
+   
+ 23  docker cp petclinic.war a6fec907dcb7:/usr/local/tomcat/webapps
+   
+ 24  docker cp sample.war a6fec907dcb7:/usr/local/tomcat/webapps
+  
+ 25  docker cp TechdatCommunicationss.war a6fec907dcb7:/usr/local/tomcat/webapps
+ 
+ 26  ls
+  
+ 27  docker ps
+  
+ 28  docker exec -it a6fec907dcb7 /bin/bash
+

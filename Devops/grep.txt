@@ -1,0 +1,49 @@
+GREP
+ "global regular expression print," processes text line by line and prints any lines which match a specified pattern.
+ 
+ syntax:
+ 
+ grep [OPTIONS] PATTERN [FILE...]
+ 
+ grep "string" filename
+ 
+ grep -l "string" filename -> displays only the file names 
+ 
+ grep -i "string" filename -> case insensitive
+ 
+ grep -c "string" filename -> counting the number of matches 
+ 
+ grep -w "string" filename -> displays the exact line of that particular line 
+ 
+ grep -w "string1\|string2" /filename  -> searches multiple words in that particular file 
+ 
+ grep -w "^string" filename -> displays the line beginning with that string 
+ 
+ grep -w "string$" filename -> displays the line ending with that string
+ 
+ grep -n "string" filename -> displays the string with line number
+ 
+ grep -v "string" filename -> displays all the lines except that line where the string is present
+ 
+ grep -v ^$ filename -> diplays the file by removing all the empty lines
+ 
+ grep -v ^# filename -> displays the file by removing the lines with # comments present in it
+ 
+ grep -A "string" filename -> displays all the lines after that particular string 
+
+ grep -A2 "string" filename -> displays 2 lines after that particular string
+ 
+ grep -B2 "string" filename -> displays 2 lines before that particular string
+ 
+ grep -C2 "string" filename -> displays 2 lines before and after that particular string 
+ 
+ grep -r "string" directoryname -> displays all the lines in files in that directory with that particular string
+
+search for multiple patterns
+----------------------------
+egrep 'apple|banana|orange' *                                                         # search for multiple patterns, all files in current dir
+egrep -i 'apple|banana|orange' *                                                      # same thing, case-insensitive
+egrep 'score|nation|liberty|equal' gettysburg-address.txt                             # all lines matching multiple patterns
+
+ 
+ 
